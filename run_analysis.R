@@ -30,12 +30,9 @@ rawDataX<-rbind(XTrain,XTest)
 #bind them together in one data set
 rawData<-cbind(rawDataX,rawDataY,rawDataSubject)
 
-names1<-read.table("features.txt")[,2]
-#set the column names. this will give us the descriptive variable names
-colnames(rawData)<-c(as.vector(read.table("features.txt")[,2]),"testPosition","testSubject")
 
 #remove the temp variables from memory
-rm(list=c("subTest","subTrain","XTest","XTrain","YTest","YTrain","rawDataSubject","rawDataX","rawDataY"))
+#rm(list=c("subTest","subTrain","XTest","XTrain","YTest","YTrain","rawDataSubject","rawDataX","rawDataY"))
 
 #So there are 561 "features" in the rawData set now. We also have the "test position" and
 #the "testSubject". The test subject is the person (there are 30 people and each as a number). The testPostion
@@ -46,6 +43,9 @@ rm(list=c("subTest","subTrain","XTest","XTrain","YTest","YTrain","rawDataSubject
 #We will grep the patterns "mean()" and "std()" from the colnames of rawData and save to v1 and v2
 # fixed=TRUE so it handles the ()
 
+#set the column names. this will give us the descriptive variable names
+colnames(rawData)<-c(as.vector(read.table("features.txt")[,2]),"testPosition","testSubject")
+
 v1<-grep("mean()",colnames(rawData),fixed=TRUE)
 v2<-grep("std()",colnames(rawData),fixed=TRUE)
 
@@ -54,14 +54,15 @@ v2<-grep("std()",colnames(rawData),fixed=TRUE)
 subsetRawData<-rawData[,c(v1,v2,562,563)]
 
 #clean up to save memory
-rm(rawData)
+#rm(rawData)
 
 #now we need to name the activities in the data set. we can get those names from the activity_labels.txt
 # we will then merge with the subsetRawData
 newData<-merge(subsetRawData,read.table("activity_labels.txt"),by.x="testPosition",by.y="V1")
 
 #clean up the subsetrawData
-rm(subsetRawData)
+#rm(subsetRawData)
+
 
 # now we want the average of each variable for each activity and each subject
 
