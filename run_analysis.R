@@ -74,6 +74,8 @@ newData$testSubject<-as.factor(newData$testSubject)
 # we just modify the tapply and use aggregate. we only aggregate on the measurements we care about
 # so we use newData[,2:67] not newData
 tds<-aggregate(newData[,2:67],list(newData$V2,newData$testSubject),mean)
+# ill rename the first 2 columns really quick
 colnames(tds)[1:2]<-c("Testing Position","Test Subject")
+#now ill save the tidy data set to a csv file. wont use row names
 write.csv(tds,file="tds.csv",row.names=FALSE)
 
