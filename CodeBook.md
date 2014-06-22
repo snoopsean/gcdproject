@@ -5,7 +5,9 @@
 ###section 1
 The tidy data set has been output to tds.csv. There are 68 columns and 180 rows (not including the header row). The first column corresponds to a persons position while the measurement is being taken. The values corresponding to the "Testing Position column" are:
 WALKING
+
 WALKING_UPSTAIRS
+
 WALKING_DOWNSTAIRS
 SITTING
 STANDING
