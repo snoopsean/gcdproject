@@ -7,7 +7,7 @@ files into R. I then merged the traning files and the test files, and then ran c
 one massive data.frame, which I called rawData. On line 34, i continue and I set the column names to 
 what i extract from the features.txt file. I also add testPosition and testSubject to the end of it
 
-###The fourth step was to appropriately labels the data set with descriptive variable names
+###The second step was to appropriately labels the data set with descriptive variable names
 Easy step. You just set the colnames of the current data set to the contents of the features.txt file. Since they
 are already ordered in the file, you can just set colnames(newData) to the value as.vector(read.table"features.txt")
 Make sure to add the testPosition and testSubject values, as they got lost on the merge last time
