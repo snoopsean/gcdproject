@@ -18,7 +18,7 @@ I ended up with 66 measurements. I then subsetted the rawData and only kept the 
 those vectors, and the testPosition and testSubject columns. 
 
 ###The next step was to use descriptive activity names to name the activities in the data set
-That was an easy stp. All we do is merge on the subsetRawData we just created, and we merge it with the 
+That was an easy step. All we do is merge on the subsetRawData we just created, and we merge it with the 
 contents of the activity_labels.txt file. We make sure to merge using the correct variables, then save the output to 
 newData.
 
