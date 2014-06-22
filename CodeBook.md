@@ -9,11 +9,20 @@ WALKING
 WALKING_UPSTAIRS
 
 WALKING_DOWNSTAIRS
+
+
 SITTING
+
+
 STANDING
+
+
 LAYING
 
+
+
 The second column corresponds to the actual person taking the test. Its a number from 1-30, an each person taking the tests has a unique number. There are 30 people, and there are 6 positions. So it makes sense that there are 30*6 rows.
+
 
 The next 66 columns correspond to the actual measurement being taken. For examples, on column 9, the test is called tBodyAccJerk-mean()-X. For every person in all 6 positions, a measurement of this type was taken. Thats the same for all other 65 measurements. A list of all the features can be found in features.txt. A explanation of why the measurements are useful can be found in features_info.txt
 
